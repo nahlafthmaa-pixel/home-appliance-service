@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+{% for collection in object_list %}
+<img src="{{collection.collcover }}" alt="{{collection_name}}">
+<a href="{{collection.id}}/">{{ collection.collection_name}}</a>
+<h3>{{ collection.description}}</h3>
+<br>
+{% endfor %}
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Home Appliance Service</h2>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <a href="/contact">Contact</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Fast & Reliable Home Appliance Repair Services</h1>
+        <p>Book experienced technicians for AC, Fridge, Washing Machine, TV, and more. 
+           Doorstep service available anytime.</p>
+        
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h2>Our Popular Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <img src="{% static 'image/ac.png' %}" alt="AC Repair">
+                <h3>AC Repair</h3>
+                <p>Quick cooling fixes and complete servicing by experts.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'image/fr.png' %}" 
+                 alt="Fridge Repair">
+                <h3>Refrigerator Repair</h3>
+                <p>Fix cooling issues, gas filling, and compressor servicing.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'image/wm.png' %}" alt="Washing Machine">
+                <h3>Washing Machine Repair</h3>
+                <p>Drum issues, drainage, vibration, and full overhaul.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'image/tv.png' %}"  alt="TV Repair">
+                <h3>TV Repair</h3>
+                <p>Fix display, sound, motherboard, and power issues.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Home Appliance Service · All Rights Reserved
+    </footer>
+
+    <!-- JS File -->
+    <script src="/static/js/home.js"></script>
+
+</body>
+</html>
